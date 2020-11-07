@@ -17,11 +17,20 @@ $sudo make install
 $ sudo rm -rf /usr/bin/python3  
 $ sudo rm -rf /usr/bin/pip3  
 
-5. 接上新的软连接  
+5. 接上新的软连接  两种方案结合一下看  
+(1) 具体细节  
 #添加python3的软链接  
-sudo ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3  
-#添加 pip3 的软链接 这一步似乎没用上，因为装的时候没把Pip一起装下来   可以用which pip3查找位置，如果不在 /usr/bin/pip3，其他地方也没有，那么就要手动装pip  
-sudo ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3  
+sudo ln -s Python3.7安装路径/python3.7 /usr/bin/python3  
+#添加 pip3 的软链接  
+sudo ln -s Python3.7安装路径/pip3.7 /usr/bin/pip3  
+#测试是否安装成功了  
+python3 --version  
+
+(2)无脑复制  
+#添加python3的软链接    
+sudo ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3    
+#添加 pip3 的软链接 这一步似乎没用上，因为装的时候没把Pip一起装下来   可以用which pip3查找位置，如果不在 /usr/bin/pip3，其他地方也没有，那么就要手动装pip    
+sudo ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3    
 
 ! 安装对应的python3.8 的pip，不然pip3无法对应到相应的python3.8  
 
