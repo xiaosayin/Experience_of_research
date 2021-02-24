@@ -36,6 +36,7 @@ CREATE USER puffer WITH PASSWORD 'jj' WITH ALL PRIVILEGE
 
 # 配置influx时，将influx password设置成环境变量  
 If everything looks good, save the InfluxDB password in an environment variable INFLUXDB_PASSWORD.  
+For instance, you may append one line to ~/.bashrc  
 export INFLUXDB_PASSWORD='jj'  
 
 # 启动influx  
