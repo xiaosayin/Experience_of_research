@@ -6,4 +6,7 @@ CREATE USER puffer WITH PASSWORD 'jj';   # 记录一下我设置的密码，暂�
 记录在~/.bashrc    
 export PUFFER_PORTAL_SECRET_KEY='yinwenpeiServer'  
 export PUFFER_PORTAL_DB_KEY='jj'  
-
+  
+ ./src/portal/manage.py ruerver 0:8080  # 直接用这句话就可以启动web server， 浏览器输入127.0.0.1:8080可以验证是否成功  
+ 
+ 
