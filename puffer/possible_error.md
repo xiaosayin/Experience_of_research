@@ -8,5 +8,8 @@ export PUFFER_PORTAL_SECRET_KEY='yinwenpeiServer'
 export PUFFER_PORTAL_DB_KEY='jj'  
   
  ./src/portal/manage.py ruerver 0:8080  # 直接用这句话就可以启动web server， 浏览器输入127.0.0.1:8080可以验证是否成功  
- 
+   
+   
+第8部分，这句话没怎么看懂 
+where enforce_moving_live_edge allows for testing pre-recorded video (instead of live streaming), and the bitrate ladder of each channel must match what is pre-encoded in the media archive.
  
