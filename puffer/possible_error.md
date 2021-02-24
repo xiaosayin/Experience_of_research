@@ -23,5 +23,9 @@ solved installing argon2_cffi, I will close the issue, thank you
 RUN  ./media-server/run_servers settings.yml  
 直接启动media server  
 
+这个influxdb是用来记录data的  
+# [optional] start InfluxDB automatically after reboots  
+sudo systemctl enable influxdb  
+
 
  
