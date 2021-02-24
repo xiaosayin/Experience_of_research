@@ -39,6 +39,8 @@ If everything looks good, save the InfluxDB password in an environment variable 
 For instance, you may append one line to ~/.bashrc  
 export INFLUXDB_PASSWORD='jj'  
 
+then  source ~/.bashrc  
+
 # 启动influx  
 sudo systemctl start influxdb  #启动  
 sudo systemctl restart influxdb #重启  
