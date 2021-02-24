@@ -13,8 +13,8 @@ export PUFFER_PORTAL_DB_KEY='jj'
 第8部分，这句话没怎么看懂 
 where enforce_moving_live_edge allows for testing pre-recorded video (instead of live streaming), and the bitrate ladder of each channel must match what is pre-encoded in the media archive.  
   
-puffer的用户：  
-xufengnianxue  
-xiaosayin2020  
+puffer的用户：    
+qianlike  
+qianqianzi   
 
  
