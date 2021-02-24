@@ -8,7 +8,7 @@ CREATE USER puffer WITH PASSWORD 'jj';   # 记录一下我设置的密码，暂�
 export PUFFER_PORTAL_SECRET_KEY='yinwenpeiServer'  
 export PUFFER_PORTAL_DB_KEY='jj'  
   
-# 直接用这句话就可以启动web server， 浏览器输入127.0.0.1:8080可以验证是否成功  
+# 直接用这句话就可以启动web server， 浏览器输入127.0.0.1:8080可以验证是否成功,在目录puffer底下    
   ./src/portal/manage.py runserver 0:8080  
    
    
@@ -22,7 +22,8 @@ qianqianzi
 # 解决AttributeError: module 'argon2' has no attribute 'low_level'  的问题    
 solved installing argon2_cffi, I will close the issue, thank you  
 
-# 直接启动media server
+# 直接启动media server， 在目录puffer底下  
+cd src/
 RUN  ./media-server/run_servers settings.yml  
   
 
