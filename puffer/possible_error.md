@@ -8,7 +8,8 @@ CREATE USER puffer WITH PASSWORD 'jj';   # 记录一下我设置的密码，暂�
 export PUFFER_PORTAL_SECRET_KEY='yinwenpeiServer'  
 export PUFFER_PORTAL_DB_KEY='jj'  
   
- ./src/portal/manage.py ruerver 0:8080  # 直接用这句话就可以启动web server， 浏览器输入127.0.0.1:8080可以验证是否成功  
+# 直接用这句话就可以启动web server， 浏览器输入127.0.0.1:8080可以验证是否成功  
+  ./src/portal/manage.py ruerver 0:8080 
    
    
 # 第8部分，这句话没怎么看懂 
@@ -31,6 +32,11 @@ sudo systemctl enable influxdb
 
 # influx的用户和密码  
 CREATE USER puffer WITH PASSWORD 'jj' WITH ALL PRIVILEGE  
+
+# 启动influx  
+sudo systemctl start influxdb  #启动  
+sudo systemctl restart influxdb #重启  
+
 
 
 
