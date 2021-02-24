@@ -20,4 +20,8 @@ qianqianzi
 解决AttributeError: module 'argon2' has no attribute 'low_level'  的问题    
 solved installing argon2_cffi, I will close the issue, thank you  
 
+RUN  ./media-server/run_servers settings.yml  
+直接启动media server  
+
+
  
