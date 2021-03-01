@@ -23,7 +23,7 @@ qianqianzi
 solved installing argon2_cffi, I will close the issue, thank you  
 
 # 直接启动media server， 在目录puffer底下  
-cd src/
+cd src/  
 RUN  ./media-server/run_servers settings.yml  
   
 
