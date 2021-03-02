@@ -37,6 +37,7 @@ $ sysctl net.ipv4.tcp_congestion_control
 net.ipv4.tcp_congestion_control = bbr  
 
 # settings.yml in puffer/src  
+```
 experiments:  
   - num_servers: 1  
     fingerprint:  
@@ -46,3 +47,4 @@ experiments:
         rebuffer_length_coeff: 100  
       cc: bbr  
 enable_logging: true  
+```
