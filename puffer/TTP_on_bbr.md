@@ -30,8 +30,19 @@ Reload sysctl with the command:
 sudo sysctl -p  
 Now when you check which congestion control algorithm is in use (with the command sysctl net.ipv4.tcp_congestion_control), you will see output containing bbr.     
 # check available congestion control algorithm.  
-# sysctl net.ipv4.tcp_available_congestion_control  
+$ sysctl net.ipv4.tcp_available_congestion_control  
 net.ipv4.tcp_available_congestion_control = reno cubic bbr lp  
 # check tcp congestion control algorithm.  
-# sysctl net.ipv4.tcp_congestion_control  
+$ sysctl net.ipv4.tcp_congestion_control  
 net.ipv4.tcp_congestion_control = bbr  
+
+# settings.yml in puffer/src  
+experiments:  
+  - num_servers: 1  
+    fingerprint:  
+      abr: puffer_ttp  
+      abr_config:  
+        model_dir:  /home/yinwenpei/puffer/ttp_mine/bbr-20210228-1  
+        rebuffer_length_coeff: 100  
+      cc: bbr  
+enable_logging: true  
