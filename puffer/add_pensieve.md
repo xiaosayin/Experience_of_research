@@ -1,4 +1,5 @@
 # how to add pensieve on the puffer
+```
 puffer/src/settings.yml 配置  
 experiments:  
   - num_servers: 1  
@@ -9,6 +10,7 @@ experiments:
         pensieve_path: /home/yinwenpei/puffer/third_party/pensieve/multi_video_sim/rl_test.py  
       cc: cubic  
 enable_logging: true  
+```
 
 # 其他abr算法实验的配置
 https://puffer.stanford.edu/data-description/  
