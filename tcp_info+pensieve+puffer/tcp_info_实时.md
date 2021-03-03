@@ -13,3 +13,24 @@ make -j CXXFLAGS='-DNONSECURE'
   j["next_chunk_sizes"] = next_chunk_sizes; // bytes
   j["cwnd"] = client_.tcp_info().value().cwnd;
 ``` 
+rl_test.py里面，需要更改get_puffer_info函数  
+```python
+def get_puffer_info(sock):
+    json_len = sock.recv(2, socket.MSG_WAITALL)
+    try:
+        json_len_num = struct.unpack("!H", json_len)[0]
+    except Exception:
+        print "Failed to decode info from Puffer over IPC"
+        sys.exit(1)
+    json_data = sock.recv(json_len_num, socket.MSG_WAITALL)
+    puffer_info = json.loads(json_data)
+    delay = puffer_info['delay'];
+    playback_buf = puffer_info['playback_buf'];
+    rebuf_time = puffer_info['rebuf_time'];
+    last_chunk_size = puffer_info['last_chunk_size'];
+    next_chunk_size = puffer_info['next_chunk_sizes'];
+    cwnd = puffer_info['cwnd'];
+    rtt = puffer_info['rtt']
+    
+    return delay, playback_buf, rebuf_time, last_chunk_size, next_chunk_size, cwnd, rtt
+```
