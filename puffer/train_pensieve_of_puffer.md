@@ -30,3 +30,8 @@ pip install h5py --user
 Installing h5py will potentially solve the error below when using TFlearn: “hdf5 is not supported on this machine (please install/reinstall h5py for optimal experience)”  
 pip install scipy --user  
 for scipy not supported  
+
+# puffer pensieve 
+multi_agnet.py line 130  
+if nn_model == None  # 正确做法  
+if nn_model == "None" # 错误做法  
