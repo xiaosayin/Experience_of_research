@@ -26,4 +26,7 @@ tf.merge_summary should be renamed to tf.summary.merge
 tf.scalar_summary should be renamed to tf.summary.scalar  
 tf.train.SummaryWriter should be renamed to tf.summary.FileWriter  
 
-
+pip install h5py --user  
+Installing h5py will potentially solve the error below when using TFlearn: “hdf5 is not supported on this machine (please install/reinstall h5py for optimal experience)”  
+pip install scipy --user  
+for scipy not supported  
