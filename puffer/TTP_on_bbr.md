@@ -9,7 +9,9 @@ net.ipv4.tcp_available_congestion_control = cubic reno
 Let's make the change to BBR.  
  
 # What you'll need  
-The first thing you need to do is make sure your Linux machine is running a supported kernel. Issue the command uname -r. If your kernel is earlier than 4.9, this won't work. You'll have to upgrade your kernel. For instance, out of the box Ubuntu 16.04 runs kernel 4.4. If your server is such that the kernel can be updated, Ubuntu now has a very easy means of updating to a much newer kernel. To do this, open a terminal window and issue the following two commands:  
+The first thing you need to do is make sure your Linux machine is running a supported kernel. Issue the command  
+uname -r   
+If your kernel is earlier than 4.9, this won't work. You'll have to upgrade your kernel. For instance, out of the box Ubuntu 16.04 runs kernel 4.4. If your server is such that the kernel can be updated, Ubuntu now has a very easy means of updating to a much newer kernel. To do this, open a terminal window and issue the following two commands:  
 
 sudo apt update  
 sudo apt install --install-recommends linux-generic-hwe-16.04  
