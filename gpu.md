@@ -1,0 +1,2 @@
+ lspci | grep -i vga  
+ 
