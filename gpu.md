@@ -92,6 +92,28 @@ print(tf.__version__)
 print(tf.test.is_gpu_available())
 #会输出True,则证明安装成功
 ```
+列出GPU:  
+```python
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())
+
+from keras import backend as K
+K.tensorflow_backend._get_available_gpus()
+```
+切换:  
+```python
+import os
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+# The GPU id to use, usually either "0" or "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"   
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1" 为使用CPU  
+```
+或者:  
+```python 
+with tf.device('/cpu:0'):
+with tf.device('/gpu:0'):
+```
+
 
 
 
