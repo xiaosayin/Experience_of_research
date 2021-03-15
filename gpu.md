@@ -35,6 +35,67 @@
 进入安装界面：https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal  
 installer type: deb(local)  
 ![Image text](https://github.com/xiaosayin/Experience_of_research/blob/main/img/sendpix2.jpg)  
+先点击下载右上角那个1.6G的deb文件  
+
+```
+sudo dpkg -i cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64.deb
+sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install cuda
+最好指定安装的cuda版本
+如：
+sudo apt-get install cuda-10-0	
+sudo apt-get install cuda-10-2
+```
+安装之后，输入如下指令：  
+RUN cat /usr/local/cuda/version.txt  
+出现以下内容说明安装成功：  
+CUDA Version 10.0.130  
+## cuda的卸载（没实验过）  
+```
+sudo apt remove cudnn*
+sudo apt-get remove cuda*
+sudo apt-get autoclean
+
+cd /usr/local/
+sudo rm -r cuda-10.2
+```
+
+# 安装cudnn  
+官网: https://developer.nvidia.com/rdp/cudnn-archive  
+https://docs.nvidia.com/deeplearning/cudnn/archives/index.html  documentaion including cudnn installation Guide  
+![Image text](https://github.com/xiaosayin/Experience_of_research/blob/main/img/sendpix3.jpg)  
+点击 Runtime,  Developer library , code Samples  
+下载这三个deb文件,用dpkg安装    
+```
+sudo dpkg -i libcudnn7_7.6.4.38-1+cuda10.0_amd64.deb
+sudo dpkg -i libcudnn7-dev_7.6.4.38-1+cuda10.0_amd64.deb
+sudo dpkg -i libcudnn7-doc_7.6.4.38-1+cuda10.0_amd64.deb
+```
+测试安装  
+cat /usr/include/x86_64-linux-gnu/cudnn_v7.h | grep CUDNN_MAJOR -A 2  
+输出如下说明安装成功:  
+```
+#define CUDNN_MAJOR 7
+#define CUDNN_MINOR 6
+#define CUDNN_PATCHLEVEL 4
+--
+#define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
+
+#include "driver_types.h"
+```  
+# 测试tensorflow的可用gpu  
+``` python3
+import tensorflow as tf
+print(tf.__version__)
+#输出'2.0.0'
+print(tf.test.is_gpu_available())
+#会输出True,则证明安装成功
+```
+
+
+
+
 
 
 
