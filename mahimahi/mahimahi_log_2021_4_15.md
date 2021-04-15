@@ -31,15 +31,36 @@ ifconfig
 那么destination会反过来  
 如图所示：  
 ![Image text](https://github.com/xiaosayin/Experience_of_research/blob/main/img/mahi_con.jpg)
+然后mahimahi引入的延时或者link就是这个虚拟容器和本机之间的链路  
+## 利用mahimahi访问本地的puffer服务器  
+调用python的selenium程序访问一个网站  
+然后在mahimahi的虚拟容器内运行这个python脚本  
+遇到了在本机终端运行python能够正常打开网页，但是mahimahi虚拟容器里面打开却连接不上的问题  
+### 第一点，不要开任何代理和vpn
+### 第二点检查http_proxy和https_proxy
+也就是运行  
+RUN $http_proxy  
+RUN $https_proxy  
+RUN $all_proxy  
+如果有任何输出，则需要清空，不然无法正常打开网页  
+清空命令：  
+RUN  
+export http_proxy=  
+export https_proxy=  
+export all_proxy=  
+这样就可以正常访问到puffer了  
+而且直接python脚本打开的网页中进行操作，mahimahi的模拟网络环境依然有效！  
 
-
-
-
-
-
-
-printenv MAHIMAHI_BASE  
+# 查看mahimahi进程  
+printenv MAHIMAHI_BASE   好像是查看本机在mahimahi下的local IP, 在mahimahi虚拟终端中运行  
+以下指令在本机终端运行:  
+ps -ef|grep mm-link  
+或者  
+ps -ef|grep mm-delay  
+这个指令是查看mahimahi进程，因为不同的mahimahi进程他的IP地址不一样，所以尽量保证只有一个进程在运行  
+一般第一个进程的虚拟IP地址是100.64.0.1 and 100.64.0.2，后面的进程就递增比如说100.64.0.3 and 100.64.0.4  
+杀死mahimahi进程就是如下指令:  
 pkill mm-delay  
 pkill mm-link  
-export http_proxy=  
+
 
