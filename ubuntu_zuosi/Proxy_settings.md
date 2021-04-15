@@ -14,3 +14,6 @@ RUN  git config --global http.proxy https://127.0.0.1:8889
 # 清空github代理  
 RUN git config --global --unset http.proxy  
 RUN git config --global --unset https.proxy  
+
+# 想要看清楚github的代理是否挂成功，还是得查看这个文件  
+~/.gitconfig
